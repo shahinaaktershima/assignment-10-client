@@ -1,17 +1,19 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
 import Footer from "./Footer";
-import Navbar from "./Navbar";
+
 import Brand from "./Brand";
 import Carousel from "./Carousel";
+import Extra from "./Extra";
 
 
 const Home = () => {
     const datas=useLoaderData();
     return (
         <div>
-           <Navbar></Navbar> 
+            
            <Banner></Banner>
+           <Extra></Extra>
            <div className="grid grid-cols-3 gap-5 container mx-auto my-10">
             
             {
