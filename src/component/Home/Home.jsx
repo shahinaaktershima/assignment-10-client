@@ -9,6 +9,7 @@ import Extra from "./Extra";
 
 const Home = () => {
     const datas=useLoaderData();
+    // console.log(datas.length);
     return (
         <div>
             

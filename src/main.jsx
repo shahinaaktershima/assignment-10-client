@@ -14,6 +14,7 @@ import Register from './component/login/Register';
 import Login from './component/login/Login';
 import AuthProvider from './component/login/AuthProvider';
 import SelectedBrands from './component/AddCards/SelectedBrands';
+import UpdatedCard from './component/AddCards/UpdatedCard';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,13 @@ const router = createBrowserRouter([
   },
   {
     path:'/selectedbrands/:id',
-    element:<SelectedBrands></SelectedBrands>
+    element:<SelectedBrands></SelectedBrands>,
+    loader:()=>fetch('http://localhost:5001/shop')
+  },
+  {
+    path:'updateShop/:id',
+    element:<UpdatedCard></UpdatedCard>,
+    loader: () => fetch('http://localhost:5001/shop')
   }
   
   ]

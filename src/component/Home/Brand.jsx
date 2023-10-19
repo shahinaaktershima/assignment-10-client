@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const Brand = ({data}) => {
-    const {id,brand_name,brand_image}=data
+    const {brand_name,id,brand_image}=data
     return (
         <Link to={`/selectedbrands/${id}`}>
         <div className="card card-compact  bg-base-100 shadow-xl">

@@ -100,7 +100,7 @@ const AddCards = () => {
                         <span className="label-text">Rating</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                    <input type="" name="rating" className="input input-bordered w-full" />
                     </label>
                 </div>
             </div>
