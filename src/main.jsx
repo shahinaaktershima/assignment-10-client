@@ -42,12 +42,12 @@ const router = createBrowserRouter([
   {
     path:'/selectedbrands/:id',
     element:<SelectedBrands></SelectedBrands>,
-    loader:()=>fetch('http://localhost:5001/shop')
+    loader:()=>fetch('https://brand-shop-server-2buk16tke-shahinaaktershimas-projects.vercel.app/shop')
   },
   {
     path:'updateShop/:id',
     element:<UpdatedCard></UpdatedCard>,
-    loader: () => fetch('http://localhost:5001/shop')
+    // loader: ({params}) => fetch(`https://brand-shop-server-2buk16tke-shahinaaktershimas-projects.vercel.app/shop/${params.id}`)
   }
   
   ]
