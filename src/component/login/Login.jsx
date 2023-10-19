@@ -65,7 +65,7 @@ const Login = () => {
         <p>Don't have an account?please go to <Link className=" text-2xl text-blue-700" to='/register'>Register</Link></p>
       </form>
       <div className="text-center my-3 ">
-        <button onClick={handleLogWithGoogle} className="btn text-black font-bold"><Link>Log in with Google</Link></button>
+        <button onClick={handleLogWithGoogle} className="btn bg-green-500 text-black font-bold"><Link>Log in with Google</Link></button>
     </div>
     </div>
    

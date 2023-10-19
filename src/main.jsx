@@ -13,6 +13,7 @@ import AddCards from './component/AddCards/AddCards';
 import Register from './component/login/Register';
 import Login from './component/login/Login';
 import AuthProvider from './component/login/AuthProvider';
+import SelectedBrands from './component/AddCards/SelectedBrands';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path:'/login',
     element:<Login></Login>
+  },
+  {
+    path:'/selectedbrands/:id',
+    element:<SelectedBrands></SelectedBrands>
   }
   
   ]
