@@ -53,7 +53,7 @@ const MyCard = ({datas,cardData,setCardData}) => {
          <button className="btn">updated</button>
          </Link>
          <Link><button onClick={()=>handleDelete(_id)} className="btn">delete</button></Link>
-         <Link to={`/details/${_id}`}> <button className="btn btn-primary">Details</button></Link>
+         
 </div>
 </div>
 </div>

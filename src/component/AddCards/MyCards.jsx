@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 const MyCards = () => {
-    const data=useLoaderData()
+    const data=useLoaderData();
     const [cardData,setCardData]=useState(data)
   
     

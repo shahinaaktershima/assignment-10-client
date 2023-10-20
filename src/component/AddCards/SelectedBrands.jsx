@@ -1,14 +1,14 @@
 import Marquee from "react-fast-marquee";
 import { useLoaderData } from "react-router-dom";
 import Selected from "./Selected";
+import { useState } from "react";
 
 
 
 
 const SelectedBrands = () => {
-    const data=useLoaderData()
-    
-    
+    const data=useLoaderData();
+   
     
 
     
@@ -27,7 +27,7 @@ const SelectedBrands = () => {
         </div>
         <div className="container mx-auto gap-5 my-10 grid md:grid-cols-2 grid-cols-1  lg:grid-cols-3">
         {
-            data.map(datas=><Selected datas={datas} key={datas._id}></Selected>)
+            data.map(datas=><Selected   datas={datas} key={datas._id}></Selected>)
         }
         </div>
         </div>

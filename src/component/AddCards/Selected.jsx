@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 const Selected = ({datas}) => {
     const {_id,name,shortdescription,brandname,type,price,rating,image}=datas;
+  
+
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">

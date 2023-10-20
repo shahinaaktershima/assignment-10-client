@@ -1,8 +1,10 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const AddCards = () => {
- 
+   const navigate=useNavigate();
+   const location=useLocation()
     const handleClick=(event)=>{
         event.preventDefault();
         const form=event.target;
@@ -34,6 +36,7 @@ const AddCards = () => {
                         confirmButtonText: 'Cool'
                       })
                 }
+                navigate(location?.state?location.state:'/mycards')
                 
             })
     }

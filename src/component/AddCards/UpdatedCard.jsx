@@ -1,8 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const UpdatedCard = () => {
+    const location=useLocation();
+    const navigate=useNavigate();
     const cards=useLoaderData()
     const {name,shortdescription,brandname,type,price,rating,image,_id}=cards;
     console.log(_id,name);
@@ -33,11 +35,12 @@ const UpdatedCard = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee Updated Successfully',
+                        text: 'Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
                 }
+                navigate(location?.state?location.state:'/mycards')
             })
     
     }
