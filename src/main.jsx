@@ -36,7 +36,7 @@ const router = createBrowserRouter([
     {
       path:'/mycards',
       element:<PriveteRoutes><MyCards></MyCards></PriveteRoutes>,
-      loader:()=>fetch('http://localhost:5001/shop')
+      loader:()=>fetch('https://brand-shop-server-g2onem2a6-shahinaaktershimas-projects.vercel.app/shop')
      
     }
   ,
@@ -51,17 +51,17 @@ const router = createBrowserRouter([
   {
     path:'/selectedbrands/:id',
     element:<SelectedBrands></SelectedBrands>,
-    loader:()=>fetch('http://localhost:5001/shop')
+    loader:()=>fetch('https://brand-shop-server-g2onem2a6-shahinaaktershimas-projects.vercel.app/shop')
   },
   {
     path:'/updateshop/:id',
     element:<PriveteRoutes><UpdatedCard></UpdatedCard></PriveteRoutes>,
-  loader:({params})=>fetch(`http://localhost:5001/shop/${params.id}`)
+  loader:({params})=>fetch(`https://brand-shop-server-g2onem2a6-shahinaaktershimas-projects.vercel.app/shop/${params.id}`)
   },
   {
     path:'/details/:id',
     element:<PriveteRoutes><Details></Details></PriveteRoutes>,
-    loader:({params})=>fetch(`http://localhost:5001/shop/${params.id}`)
+    loader:({params})=>fetch(`https://brand-shop-server-g2onem2a6-shahinaaktershimas-projects.vercel.app/shop/${params.id}`)
   }
   
   ]

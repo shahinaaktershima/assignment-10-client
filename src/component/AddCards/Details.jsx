@@ -7,7 +7,7 @@ const Details = () => {
     const {name,shortdescription,brandname,type,price,rating,image,_id}=cards;
     console.log(_id,name);
     const handleClick=()=>{
-        fetch('http://localhost:5001/shop', {
+        fetch('https://brand-shop-server-g2onem2a6-shahinaaktershimas-projects.vercel.app/shop', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

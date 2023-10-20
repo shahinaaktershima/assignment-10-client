@@ -22,7 +22,7 @@ const UpdatedCard = () => {
         const updatedValue={name,shortdescription,brandname,type,price,rating,image}
         console.log(updatedValue);
     
-        fetch(`http://localhost:5001/shop/${_id}`, {
+        fetch(`https://brand-shop-server-g2onem2a6-shahinaaktershimas-projects.vercel.app/shop/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

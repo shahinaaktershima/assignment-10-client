@@ -18,7 +18,7 @@ const MyCard = ({datas,cardData,setCardData}) => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5001/shop/${_id}`, {
+                fetch(`https://brand-shop-server-g2onem2a6-shahinaaktershimas-projects.vercel.app/shop/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
