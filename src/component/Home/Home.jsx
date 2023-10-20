@@ -15,7 +15,7 @@ const Home = () => {
             
            <Banner></Banner>
            <Extra></Extra>
-           <div className="grid grid-cols-3 gap-5 container mx-auto my-10">
+           <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 container mx-auto my-10">
             
             {
                 datas.map(data=><Brand data={data} key={data.id}></Brand>)

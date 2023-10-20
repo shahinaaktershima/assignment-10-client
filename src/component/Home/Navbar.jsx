@@ -16,7 +16,7 @@ const Navbar = () => {
 
     const links=<>
     <li><NavLink to='/'>HOME</NavLink></li>
-    <li><NavLink to='/mycard'>MY CARDS</NavLink></li>
+    <li><NavLink to='/mycards'>MY CARDS</NavLink></li>
     <li><NavLink to='/addproduct'>Add Product</NavLink></li>
    
     <li><NavLink to='/register'>Register</NavLink></li>
@@ -34,9 +34,9 @@ const Navbar = () => {
        }
       </ul>
     </div>
-<div className="flex items-center">  
-    <img className="h-[100px] w-[100px] rounded-full" src="https://i.postimg.cc/GhMh8frX/pexels-kaboompics-com-6335.jpg" alt="" />
-      <a className="btn btn-ghost normal-case text-xl">Entertainment and Media</a></div>
+<div className="md:flex items-center ">  
+    <img className="md:h-[100px] md:w-[100px] h-[40px] w-[40px] rounded-full" src="https://i.postimg.cc/GhMh8frX/pexels-kaboompics-com-6335.jpg" alt="" />
+      <a className="btn btn-ghost normal-case text-sm md:text-xl">Entertainment and Media</a></div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -47,7 +47,8 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     {
-      user ?<div className="flex items-center gap-2"> <h2>{user.email}</h2> <img className="w-14 h-14 rounded-full" src="https://i.postimg.cc/t4HB3H5G/image.png" alt="" /><Link className="btn" onClick={handleLogOut}>Sign out</Link></div>:
+      user ?<div className="block md:flex items-center gap-2"> <h2 className="" >{user?.displayName}</h2> <img className="w-5 h-5  md:w-14 md:h-14 rounded-full" src={user?.photoURL
+      } alt="" /><Link className="btn" onClick={handleLogOut}>Sign out</Link></div>:
       <button className="btn"> <NavLink to='/login'>Login</NavLink></button>
      } 
   </div>

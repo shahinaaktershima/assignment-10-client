@@ -14,10 +14,10 @@ const Selected = ({datas}) => {
     <p className="font-bold">price:{price}</p>
     <span>rating:{rating}     <input type="radio" name="rating-9" className="mask mask-star-2" /></span>
     <div className="card-actions justify-end">
-    <Link to={`updateShop/${_id}`}>
+    <Link to={`/updateshop/${_id}`}>
              <button className="btn">updated</button>
              </Link>
-      <button className="btn btn-primary">Details</button>
+     <Link to={`/details/${_id}`}> <button className="btn btn-primary">Details</button></Link>
     </div>
   </div>
 </div>

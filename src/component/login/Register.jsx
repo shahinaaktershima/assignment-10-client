@@ -1,16 +1,22 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import Swal from "sweetalert2";
 
 
 const Register = () => {
     const {createUser}=useContext(AuthContext);
+    const [err,setErr]=useState('');
+    const location=useLocation()
+    const navigate=useNavigate();
     const handleSubmit=event=>{
         event.preventDefault();
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
+        if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)){
+          setErr('your password should have one uppercase one lower case and one special character');
+         }
         console.log(email,password);
         form.reset('');
         createUser(email,password)
@@ -23,10 +29,11 @@ const Register = () => {
                   icon: 'success',
                   confirmButtonText: 'Cool'
                 })}
-            
+                navigate(location?.state?location.state:'/')
         })
         .catch(error=>{
             console.log(error);
+            
         })
     
     
@@ -34,6 +41,7 @@ const Register = () => {
     }
     return (
         <div>
+          <p className="text-center text-blue-600 text-2xl font-bold">{err}</p>
             <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left ">

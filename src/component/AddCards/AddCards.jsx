@@ -16,7 +16,7 @@ const AddCards = () => {
         form.reset('')
         const user={name,shortdescription,brandname,type,price,rating,image}
         console.log(user);
-        fetch('https://brand-shop-server-2buk16tke-shahinaaktershimas-projects.vercel.app/shop', {
+        fetch('http://localhost:5001/shop', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -15,6 +15,9 @@ import Login from './component/login/Login';
 import AuthProvider from './component/login/AuthProvider';
 import SelectedBrands from './component/AddCards/SelectedBrands';
 import UpdatedCard from './component/AddCards/UpdatedCard';
+import PriveteRoutes from './component/AddCards/PriveteRoutes';
+import MyCards from './component/AddCards/MyCards';
+import Details from './component/AddCards/Details';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +31,13 @@ const router = createBrowserRouter([
     },
     {
       path:'/addproduct',
-      element:<AddCards></AddCards>
+      element:<PriveteRoutes><AddCards></AddCards></PriveteRoutes>
+    },
+    {
+      path:'/mycards',
+      element:<PriveteRoutes><MyCards></MyCards></PriveteRoutes>,
+      loader:()=>fetch('http://localhost:5001/shop')
+     
     }
   ,
   {
@@ -42,12 +51,17 @@ const router = createBrowserRouter([
   {
     path:'/selectedbrands/:id',
     element:<SelectedBrands></SelectedBrands>,
-    loader:()=>fetch('https://brand-shop-server-2buk16tke-shahinaaktershimas-projects.vercel.app/shop')
+    loader:()=>fetch('http://localhost:5001/shop')
   },
   {
-    path:'updateShop/:id',
-    element:<UpdatedCard></UpdatedCard>,
-    // loader: ({params}) => fetch(`https://brand-shop-server-2buk16tke-shahinaaktershimas-projects.vercel.app/shop/${params.id}`)
+    path:'/updateshop/:id',
+    element:<PriveteRoutes><UpdatedCard></UpdatedCard></PriveteRoutes>,
+  loader:({params})=>fetch(`http://localhost:5001/shop/${params.id}`)
+  },
+  {
+    path:'/details/:id',
+    element:<Details></Details>,
+    loader:({params})=>fetch(`http://localhost:5001/shop/${params.id}`)
   }
   
   ]

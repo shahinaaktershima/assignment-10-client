@@ -1,11 +1,14 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import Swal from "sweetalert2";
 
 
 const Login = () => {
-    const {logIn,google}=useContext(AuthContext)
+    const {logIn,google}=useContext(AuthContext);
+    const [err,setErr]=useState("");
+    const location=useLocation();
+    const navigate=useNavigate();
     const handleSubmit=event=>{
         event.preventDefault();
         const form=event.target;
@@ -16,6 +19,7 @@ const Login = () => {
         logIn(email,password)
         .then(result=>{
             console.log(result.user);
+           
             if(result.user){
               Swal.fire({
                   title: 'Success!',
@@ -24,9 +28,12 @@ const Login = () => {
                   confirmButtonText: 'Cool'
                 })
           }
+          navigate(location?.state?location.state:'/')
+          
         })
         .catch(error=>{
             console.log(error);
+            setErr("your password doesn't match .please provide the right password");
         })
     
     
@@ -36,7 +43,7 @@ const Login = () => {
     const handleLogWithGoogle=()=>{
         google()
         .then(result=>{
-            console.log(result);
+            console.log(result.user);
             if(result.user){
               Swal.fire({
                   title: 'Success!',
@@ -45,13 +52,16 @@ const Login = () => {
                   confirmButtonText: 'Cool'
                 })
           }
+          navigate(location?.state?location.state:'/')
         })
         .then(error=>{
             console.log(error);
+            setErr("your password doesn't match .please provide the right password");
         })
     }
     return (
         <div>
+          <p className="text-center text-blue-600 text-2xl font-bold">{err}</p>
             <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left ">
